@@ -9,11 +9,12 @@
 </head>
 
 <body>
+    <div id="responsetext"></div>
     <script>
         async function showData() {
             const response = await fetch("https://eppid.purworejokab.go.id/data/statistik");
             const user = await response.json();
-            console.log(user);
+            document.querySelector('#responsetext').innerHTML = JSON.stringify(user);
         }
         showData();
     </script>
